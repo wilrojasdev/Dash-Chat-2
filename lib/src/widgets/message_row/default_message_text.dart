@@ -35,7 +35,7 @@ class DefaultMessageText extends StatelessWidget {
                   child: Text(
                     (messageOptions.timeFormat ?? intl.DateFormat('HH:mm'))
                         .format(message.createdAt),
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       color: isOwnMessage
                           ? messageOptions.currentUserTimeTextColor(context)
                           : messageOptions.timeTextColor(),
@@ -109,7 +109,7 @@ class DefaultMessageText extends StatelessWidget {
                 ? messageOptions.parsePatterns!
                 : defaultParsePatterns,
             text: text,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: isOwnMessage
                   ? messageOptions.currentUserTextColor(context)
                   : messageOptions.textColor,
@@ -125,12 +125,10 @@ class DefaultMessageText extends StatelessWidget {
           ..onTap = () => messageOptions.onPressMention != null
               ? messageOptions.onPressMention!(mention)
               : null,
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           color: isOwnMessage
               ? messageOptions.currentUserTextColor(context)
               : messageOptions.textColor,
-          decoration: TextDecoration.none,
-          fontWeight: FontWeight.w600,
         ),
       ),
     );
